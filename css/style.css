@@ -1,0 +1,91 @@
+body {
+  background: linear-gradient(180deg, #25408a 0%, #4766e6 100%);
+  background-attachment: fixed; /* o degradê cobre a tela toda mesmo se a página for curta */
+  min-height: 100vh;
+  font-family: "Baloo 2", sans-serif;
+}
+
+.tela-login {
+  max-width: 400px;
+}
+
+.titulo-login {
+  font-size: 2.3rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+/* Campos (telefone e senha) */
+.campo {
+  position: relative; /* permite posicionar o ícone dentro do campo */
+  width: 85%;
+}
+
+.campo input.form-control {
+  background-color: #d9d9d9;
+  border: none;
+  height: 60px;
+  padding: 0 55px 0 20px; /* espaço à direita para o ícone */
+  font-weight: 700;
+  color: #333;
+}
+
+.campo input.form-control::placeholder {
+  color: #555;
+}
+
+.campo input.form-control:focus {
+  background-color: #e6e6e6;
+  box-shadow: 0 0 0 4px rgba(250, 133, 72, 0.5);
+}
+
+.campo i {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.6rem;
+  color: #222;
+  pointer-events: none; /* o clique "atravessa" o ícone e cai no campo */
+}
+
+/* Link "Esqueceu a senha?" */
+.link-esqueceu {
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+.link-esqueceu:hover {
+  color: #ffd994;
+}
+
+/* Botões */
+.btn-acessar,
+.btn-familiar {
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: 800;
+  padding: 18px 20px;
+}
+
+.btn-acessar {
+  background-color: #fa8548;
+}
+.btn-acessar:hover {
+  background-color: #e8733a;
+  color: #fff;
+}
+.btn-acessar i {
+  font-size: 1.8rem;
+  color: #222;
+}
+
+.btn-familiar {
+  background-color: #8a2be2;
+}
+.btn-familiar:hover {
+  background-color: #7620c4;
+  color: #fff;
+}
