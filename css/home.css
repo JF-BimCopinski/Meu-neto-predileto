@@ -1,0 +1,159 @@
+/* Tamanho-base da página: no computador tudo (em rem) fica 25% maior */
+html {
+  font-size: 100%;
+}
+@media (min-width: 992px) {
+  html {
+    font-size: 125%;
+  }
+}
+
+body {
+  background: linear-gradient(180deg, #2f4cb0 0%, #4a6be3 100%);
+  background-attachment: fixed;
+  font-family: "Baloo 2", sans-serif;
+}
+
+/* Limita a largura do conteúdo, mas as faixas de cor ocupam a tela toda */
+.conteudo {
+  max-width: 25rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---------- Topo ---------- */
+.topo {
+  background-color: #2d2a8f;
+  padding: 1.25rem 0 1rem;
+}
+
+.item-topo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.item-topo i {
+  font-size: 2.8rem;
+  line-height: 1;
+  color: #fa8548;
+}
+
+.caixa-foto-perfil {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: 0.1875rem solid #f4a6c8;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+/* Imagens dentro das caixas: preenchem tudo, sem deformar */
+.caixa-foto-perfil img,
+.caixa-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- Busca e filtro ---------- */
+.busca {
+  position: relative;
+  flex-grow: 1;
+}
+
+.busca input {
+  height: 2.75rem;
+  background-color: #fff;
+  border: none;
+  padding: 0 2.8125rem 0 1.125rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.busca input::placeholder {
+  color: #333;
+}
+
+.busca > i {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #111;
+  pointer-events: none;
+}
+
+.btn-filtro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.btn-filtro i {
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #111;
+}
+
+/* ---------- Cartões dos netos ---------- */
+.secao-ultimos,
+.secao-sugestoes {
+  padding: 1.5rem 1rem 0;
+}
+.secao-sugestoes {
+  padding-bottom: 2rem;
+}
+
+/* Dentro de cada seção, o .conteudo vira um cartão escuro com texto branco */
+.secao-ultimos .conteudo,
+.secao-sugestoes .conteudo {
+  background-color: #1c2160;
+  border: 0.125rem solid rgba(255, 255, 255, 0.25);
+  border-radius: 1.5rem;
+  padding: 1.5rem 1.25rem;
+  color: #fff;
+}
+
+.titulo-secao {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fa8548;
+}
+
+.nome-neto {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 0.875rem 0;
+}
+
+.caixa-foto {
+  width: 7rem;
+  height: 8rem;
+  background-color: #fff;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.servicos p {
+  font-size: 1.1rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+.text-warning {
+  font-size: 1.1rem;
+}
