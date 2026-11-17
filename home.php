@@ -27,7 +27,7 @@
                 <a href="#" class="item-topo">
                     <!-- FOTO DE PERFIL: coloque o caminho da imagem no src (ex.: img/perfil.jpg) -->
                     <div class="caixa-foto-perfil">
-                        <img src="" alt="">
+                        <img src="img/velha.jpg" alt="foto do usuário">
                     </div>
                     <span>PERFIL</span>
                 </a>
@@ -67,7 +67,7 @@
                     <div>
                         <!-- FOTO DA MARIA LUIZA: coloque o caminho da imagem no src -->
                         <div class="caixa-foto">
-                            <img src="" alt="">
+                            <img src="img/neto1.jpg" alt="imagem do neto de aluguel 1">
                         </div>
                         <div class="text-warning mt-2">
                             <i class="bi bi-star-fill"></i>
@@ -96,7 +96,7 @@
                     <div>
                         <!-- FOTO DO MIGUEL: coloque o caminho da imagem no src -->
                         <div class="caixa-foto">
-                            <img src="" alt="">
+                            <img src="img/neto2.jpg" alt="imagem do neto de aluguel 2">
                         </div>
                         <div class="text-warning mt-2">
                             <i class="bi bi-star-fill"></i>
