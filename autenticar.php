@@ -23,7 +23,7 @@ if ($telefone == $telefoneCerto && $senha == $senhaCerta) {
     echo "<p>Bem-vindo ao Meu Neto Predileto.</p>";
 } else {
     // Volta pro login avisando que deu erro
-    header("Location: login.php?erro=1");
+    header("Location: index.php?erro=1");
     exit;
 }
 ?>
