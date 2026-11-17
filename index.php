@@ -40,25 +40,28 @@
                 <i class="bi bi-telephone"></i>
             </div>
 
-            <!-- Campo de senha -->
+            <!-- Campo de senha (com olhinho para mostrar/ocultar) -->
             <div class="campo mx-auto">
                 <input type="password" class="form-control rounded-pill" id="senha" name="senha"
                     placeholder="Insira sua senha" required>
                 <i class="bi bi-shield-check"></i>
+                <button type="button" class="btn-olho" data-alvo="senha" aria-label="Mostrar ou ocultar senha">
+                    <i class="bi bi-eye"></i>
+                </button>
             </div>
 
             <a href="#" class="link-esqueceu d-inline-block mt-2 mb-5">Esqueceu a senha?</a>
 
-            <!-- Botão principal -->
-            <button type="submit" class="btn btn-acessar w-75 d-flex justify-content-between align-items-center mx-auto mb-4">
-                <span class="flex-grow-1">ACESSAR CONTA</span>
+            <!-- Botão: neto de aluguel -->
+            <button type="submit" name="tipo" value="neto" class="btn btn-acessar w-75 d-flex justify-content-between align-items-center mx-auto mb-4">
+                <span class="flex-grow-1">ACESSAR COMO NETO DE ALUGUEL</span>
                 <i class="bi bi-box-arrow-in-right"></i>
             </button>
 
-            <!-- Botão secundário -->
-            <a href="familiar.php" class="btn btn-familiar w-75 d-block mx-auto mb-4">
-                ACESSE COMO FAMILIAR
-            </a>
+            <!-- Botão: idoso e responsável pelo idoso -->
+            <button type="submit" name="tipo" value="idoso" class="btn btn-familiar w-75 d-block mx-auto mb-4">
+                ACESSE COMO IDOSO E RESPONSÁVEL PELO IDOSO
+            </button>
 
             <!-- Botão que abre o cadastro -->
             <button type="button" id="btnAbrirCadastro" class="btn btn-cadastrar w-75 d-block mx-auto">
@@ -87,9 +90,27 @@
 
             <!-- Senha -->
             <div class="campo mx-auto mb-3">
-                <input type="password" class="form-control rounded-pill" name="senha"
+                <input type="password" class="form-control rounded-pill" id="senhaCadastro" name="senha"
                     placeholder="Insira sua senha" required>
                 <i class="bi bi-shield-check"></i>
+                <button type="button" class="btn-olho" data-alvo="senhaCadastro" aria-label="Mostrar ou ocultar senha">
+                    <i class="bi bi-eye"></i>
+                </button>
+            </div>
+
+            <!-- Confirmação de senha -->
+            <div class="campo mx-auto mb-3">
+                <input type="password" class="form-control rounded-pill" id="confirmaSenha" name="confirma_senha"
+                    placeholder="Confirme sua senha" required>
+                <i class="bi bi-shield-check"></i>
+                <button type="button" class="btn-olho" data-alvo="confirmaSenha" aria-label="Mostrar ou ocultar senha">
+                    <i class="bi bi-eye"></i>
+                </button>
+            </div>
+
+            <!-- Aviso de senhas diferentes (começa escondido) -->
+            <div id="avisoSenha" class="alert alert-danger py-2 small d-none" role="alert">
+                As senhas não conferem.
             </div>
 
             <!-- Email -->
@@ -99,11 +120,39 @@
                 <i class="bi bi-envelope"></i>
             </div>
 
-            <!-- Endereço -->
-            <div class="campo mx-auto mb-4">
-                <input type="text" class="form-control rounded-pill" name="endereco"
-                    placeholder="Insira seu endereço" required>
+            <!-- CEP -->
+            <div class="campo mx-auto mb-3">
+                <input type="text" class="form-control rounded-pill" id="cep" name="cep"
+                    placeholder="Insira seu CEP" minlength="9" maxlength="9" required>
                 <i class="bi bi-geo-alt"></i>
+            </div>
+
+            <!-- Rua -->
+            <div class="campo mx-auto mb-3">
+                <input type="text" class="form-control rounded-pill" name="rua"
+                    placeholder="Rua" required>
+                <i class="bi bi-signpost"></i>
+            </div>
+
+            <!-- Bairro -->
+            <div class="campo mx-auto mb-3">
+                <input type="text" class="form-control rounded-pill" name="bairro"
+                    placeholder="Bairro" required>
+                <i class="bi bi-map"></i>
+            </div>
+
+            <!-- Número (opcional) -->
+            <div class="campo mx-auto mb-3">
+                <input type="text" class="form-control rounded-pill" name="numero"
+                    placeholder="Número (opcional)">
+                <i class="bi bi-hash"></i>
+            </div>
+
+            <!-- Complemento (opcional) -->
+            <div class="campo mx-auto mb-4">
+                <input type="text" class="form-control rounded-pill" name="complemento"
+                    placeholder="Complemento (opcional)">
+                <i class="bi bi-house-door"></i>
             </div>
 
             <!-- Perfil de usuário (botões selecionáveis) -->
@@ -142,8 +191,8 @@
                 </div>
             </div>
 
-            <!-- Foto (só visual, por enquanto) -->
-            <label for="foto" class="d-block text-white fw-bold mb-2">Foto de perfil</label>
+            <!-- Foto (opcional, só visual por enquanto) -->
+            <label for="foto" class="d-block text-white fw-bold mb-2">Foto de perfil (opcional)</label>
             <div class="campo-foto mx-auto mb-4">
                 <input type="file" class="form-control rounded-pill" id="foto" name="foto" accept="image/*">
             </div>
@@ -179,6 +228,38 @@
             });
         });
 
+        // ---------- Máscara do CEP: 00000-000 ----------
+        const campoCep = document.getElementById('cep');
+
+        campoCep.addEventListener('input', () => {
+            let numeros = campoCep.value.replace(/\D/g, '').slice(0, 8);
+
+            if (numeros.length > 5) {
+                numeros = numeros.replace(/^(\d{5})(\d{0,3})$/, '$1-$2');
+            }
+
+            campoCep.value = numeros;
+        });
+
+        // ---------- Olhinho: mostrar/ocultar senha ----------
+        const botoesOlho = document.querySelectorAll('.btn-olho');
+
+        botoesOlho.forEach((botao) => {
+            botao.addEventListener('click', () => {
+                const campo = document.getElementById(botao.dataset.alvo);
+                const icone = botao.querySelector('i');
+
+                if (campo.type === 'password') {
+                    campo.type = 'text';
+                } else {
+                    campo.type = 'password';
+                }
+
+                icone.classList.toggle('bi-eye');
+                icone.classList.toggle('bi-eye-slash');
+            });
+        });
+
         // ---------- Alternar entre login e cadastro ----------
         const formLogin = document.getElementById('formLogin');
         const formCadastro = document.getElementById('formCadastro');
@@ -208,6 +289,20 @@
                     campo.required = ehResponsavel;
                 });
             });
+        });
+
+        // ---------- Conferir se as senhas do cadastro são iguais ----------
+        formCadastro.addEventListener('submit', (evento) => {
+            const senha = document.getElementById('senhaCadastro').value;
+            const confirma = document.getElementById('confirmaSenha').value;
+            const avisoSenha = document.getElementById('avisoSenha');
+
+            if (senha !== confirma) {
+                evento.preventDefault(); // cancela o envio do formulário
+                avisoSenha.classList.remove('d-none');
+            } else {
+                avisoSenha.classList.add('d-none');
+            }
         });
     </script>
 </body>
