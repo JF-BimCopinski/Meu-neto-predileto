@@ -1,3 +1,17 @@
+/* =====================================================
+   TAMANHO-BASE DA PÁGINA
+   No computador (992px ou mais) tudo que está em rem fica 25% maior.
+   Para aumentar/diminuir a tela toda, mude só o 125%.
+   ===================================================== */
+html {
+  font-size: 100%;
+}
+@media (min-width: 992px) {
+  html {
+    font-size: 125%;
+  }
+}
+
 body {
   background: linear-gradient(180deg, #25408a 0%, #4766e6 100%);
   background-attachment: fixed; /* o degradê cobre a tela toda mesmo se a página for curta */
@@ -5,8 +19,11 @@ body {
   font-family: "Baloo 2", sans-serif;
 }
 
+/* =====================================================
+   LOGIN E CADASTRO (index.php)
+   ===================================================== */
 .tela-login {
-  max-width: 400px;
+  max-width: 25rem;
 }
 
 .titulo-login {
@@ -15,7 +32,7 @@ body {
   line-height: 1.2;
 }
 
-/* Campos (telefone e senha) */
+/* Campos (telefone, senha, etc.) */
 .campo {
   position: relative; /* permite posicionar o ícone dentro do campo */
   width: 85%;
@@ -24,8 +41,8 @@ body {
 .campo input.form-control {
   background-color: #d9d9d9;
   border: none;
-  height: 60px;
-  padding: 0 55px 0 20px; /* espaço à direita para o ícone */
+  height: 3.75rem;
+  padding: 0 3.4375rem 0 1.25rem; /* espaço à direita para o ícone */
   font-weight: 700;
   color: #333;
 }
@@ -36,17 +53,17 @@ body {
 
 .campo input.form-control:focus {
   background-color: #e6e6e6;
-  box-shadow: 0 0 0 4px rgba(250, 133, 72, 0.5);
+  box-shadow: 0 0 0 0.25rem rgba(250, 133, 72, 0.5);
 }
 
 .campo > i {
   position: absolute;
-  right: 18px;
+  right: 1.125rem;
   top: 50%;
   transform: translateY(-50%);
   font-size: 1.6rem;
   color: #222;
-  pointer-events: none;
+  pointer-events: none; /* o clique "atravessa" o ícone e cai no campo */
 }
 
 /* Link "Esqueceu a senha?" */
@@ -64,10 +81,10 @@ body {
 .btn-acessar,
 .btn-familiar {
   border: none;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   color: #fff;
   font-weight: 800;
-  padding: 18px 20px;
+  padding: 1.125rem 1.25rem;
 }
 
 .btn-acessar {
@@ -99,10 +116,10 @@ body {
 .btn-cadastrar {
   background-color: #fff;
   border: none;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   color: #000;
   font-weight: 800;
-  padding: 18px 20px;
+  padding: 1.125rem 1.25rem;
 }
 .btn-cadastrar:hover {
   background-color: #e6e6e6;
@@ -122,7 +139,7 @@ body {
 /* ---------- Olhinho da senha ---------- */
 .btn-olho {
   position: absolute;
-  left: calc(100% + 8px);
+  left: calc(100% + 0.5rem);
   top: 50%;
   transform: translateY(-50%);
   background: none;
@@ -136,23 +153,21 @@ body {
   color: #ffd994;
 }
 
-/* ------------ HOME ------------------*/
-body {
-  background-color: #2f4cb0;
-  font-family: "Baloo 2", sans-serif;
-}
+/* =====================================================
+   HOME (home.php) - também usado no perfil (perfil-neto.php)
+   ===================================================== */
 
-/* Limita a largura do conteúdo (visual de celular), mas as faixas de cor ocupam a tela toda */
+/* Limita a largura do conteúdo, mas as faixas de cor ocupam a tela toda */
 .conteudo {
-  max-width: 400px;
+  max-width: 25rem;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 1.25rem;
 }
 
 /* ---------- Topo ---------- */
 .topo {
   background-color: #2d2a8f;
-  padding: 20px 0 16px;
+  padding: 1.25rem 0 1rem;
 }
 
 .item-topo {
@@ -161,7 +176,7 @@ body {
   align-items: center;
   color: #fff;
   font-weight: 800;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   text-decoration: none;
 }
 
@@ -172,10 +187,10 @@ body {
 }
 
 .caixa-foto-perfil {
-  width: 64px;
-  height: 64px;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
-  border: 3px solid #f4a6c8;
+  border: 0.1875rem solid #f4a6c8;
   background-color: #fff;
   overflow: hidden;
 }
@@ -196,10 +211,10 @@ body {
 }
 
 .busca input {
-  height: 44px;
+  height: 2.75rem;
   background-color: #fff;
   border: none;
-  padding: 0 45px 0 18px;
+  padding: 0 2.8125rem 0 1.125rem;
   font-weight: 700;
   color: #333;
 }
@@ -210,7 +225,7 @@ body {
 
 .busca > i {
   position: absolute;
-  right: 16px;
+  right: 1rem;
   top: 50%;
   transform: translateY(-50%);
   font-size: 1.2rem;
@@ -227,7 +242,7 @@ body {
   padding: 0;
   color: #fff;
   font-weight: 800;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .btn-filtro i {
@@ -236,43 +251,232 @@ body {
   color: #111;
 }
 
-/* ---------- Seções ---------- */
-.titulo-secao {
-  font-size: 0.95rem;
+/* ---------- Cartões dos netos ---------- */
+.secao-ultimos,
+.secao-sugestoes {
+  padding: 1.5rem 1rem 0;
+}
+.secao-sugestoes {
+  padding-bottom: 2rem;
+}
+
+/* Dentro de cada seção, o .conteudo vira um cartão escuro com texto branco */
+.secao-ultimos .conteudo,
+.secao-sugestoes .conteudo {
+  background-color: #1c2160;
+  border: 0.125rem solid rgba(255, 255, 255, 0.25);
+  border-radius: 1.5rem;
+  padding: 1.5rem 1.25rem;
+  color: #fff;
+}
+
+/* Cartão clicável: a borda fica laranja com o mouse por cima */
+.secao-ultimos .conteudo:hover,
+.secao-sugestoes .conteudo:hover {
+  border-color: #fa8548;
+}
+
+.ver-perfil {
+  font-size: 1rem;
   font-weight: 800;
+  color: #fa8548;
+}
+
+.titulo-secao {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fa8548;
 }
 
 .nome-neto {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 800;
-  margin: 14px 0;
+  margin: 0.875rem 0;
 }
 
 .caixa-foto {
-  width: 100px;
-  height: 110px;
+  width: 7rem;
+  height: 8rem;
   background-color: #fff;
-  border-radius: 6px;
+  border-radius: 0.75rem;
   overflow: hidden;
 }
 
 .servicos p {
+  font-size: 1.1rem;
   font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 0.6rem;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
 }
 
-/* Últimos netos: fundo azul, texto branco */
-.secao-ultimos {
+.text-warning {
+  font-size: 1.1rem;
+}
+
+/* =====================================================
+   PERFIL DO NETO (perfil-neto.php)
+   ===================================================== */
+
+/* ---------- Topo ---------- */
+.marca-topo {
+  margin: 0;
   color: #fff;
-  padding: 24px 0 70px;
+  font-weight: 800;
+  font-size: 1.1rem;
+  line-height: 1.1;
+  text-align: right;
 }
 
-/* Sugestões: fundo cinza com o topo arredondado (lembra as nuvens do design) */
-.secao-sugestoes {
-  background-color: #d9d9e1;
-  border-radius: 80px 80px 0 0;
-  margin-top: -40px;
-  padding: 40px 0;
+/* ---------- Cartões ---------- */
+.cartao-perfil {
+  background-color: #1c2160;
+  border: 0.125rem solid rgba(255, 255, 255, 0.25);
+  border-radius: 1.5rem;
+  color: #fff;
+  padding: 1.5rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+/* O primeiro cartão não tem padding, para a capa encostar nas bordas */
+.cartao-capa {
+  padding: 0;
+  overflow: hidden;
+}
+
+.capa {
+  height: 7rem;
+  background: linear-gradient(135deg, #8a2be2 0%, #2f4cb0 100%);
+}
+
+/* ---------- Foto e nome ---------- */
+.foto-neto {
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  border: 0.3125rem solid #fa8548;
+  background-color: #fff;
+  overflow: hidden;
+  margin-top: -4.5rem; /* sobe a foto por cima da capa */
+}
+
+.foto-neto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.nome-perfil {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0.75rem 0 0;
+}
+
+.profissao {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffd994;
+  margin-bottom: 0.5rem;
+}
+
+.nota-numero {
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.qtd-avaliacoes {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+/* ---------- Números ---------- */
+.bloco-numero {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 0.75rem 0.25rem;
+}
+
+.numero {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.rotulo {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ---------- Botões ---------- */
+.btn-contratar,
+.btn-mensagem {
+  border: none;
+  border-radius: 1.25rem;
+  font-weight: 800;
+  padding: 1.125rem 1.25rem;
+}
+
+.btn-contratar {
+  background-color: #fa8548;
   color: #111;
+}
+.btn-contratar:hover {
+  background-color: #e8733a;
+  color: #111;
+}
+
+.btn-mensagem {
+  background-color: #8a2be2;
+  color: #fff;
+}
+.btn-mensagem:hover {
+  background-color: #7620c4;
+  color: #fff;
+}
+
+/* ---------- Conteúdo dos cartões ---------- */
+.texto-sobre {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.chip {
+  display: inline-block;
+  border: 0.125rem solid #fa8548;
+  border-radius: 2rem;
+  padding: 0.3rem 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.info-linha {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.info-linha i {
+  color: #fa8548;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+/* ---------- Avaliações ---------- */
+.comentario {
+  border-top: 0.125rem solid rgba(255, 255, 255, 0.15);
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.avatar-comentario {
+  font-size: 2.2rem;
+  line-height: 1;
+  color: #c9d1ff;
 }
