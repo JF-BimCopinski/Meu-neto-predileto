@@ -39,14 +39,14 @@ body {
   box-shadow: 0 0 0 4px rgba(250, 133, 72, 0.5);
 }
 
-.campo i {
+.campo > i {
   position: absolute;
   right: 18px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 1.6rem;
   color: #222;
-  pointer-events: none; /* o clique "atravessa" o ícone e cai no campo */
+  pointer-events: none;
 }
 
 /* Link "Esqueceu a senha?" */
@@ -88,4 +88,191 @@ body {
 .btn-familiar:hover {
   background-color: #7620c4;
   color: #fff;
+}
+
+/* ---------- Cadastro ---------- */
+.subtitulo-cadastro {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.btn-cadastrar {
+  background-color: #fff;
+  border: none;
+  border-radius: 20px;
+  color: #000;
+  font-weight: 800;
+  padding: 18px 20px;
+}
+.btn-cadastrar:hover {
+  background-color: #e6e6e6;
+  color: #000;
+}
+
+.campo-foto {
+  width: 85%;
+}
+.campo-foto input.form-control {
+  background-color: #d9d9d9;
+  border: none;
+  font-weight: 700;
+  color: #555;
+}
+
+/* ---------- Olhinho da senha ---------- */
+.btn-olho {
+  position: absolute;
+  left: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.btn-olho:hover {
+  color: #ffd994;
+}
+
+/* ------------ HOME ------------------*/
+body {
+  background-color: #2f4cb0;
+  font-family: "Baloo 2", sans-serif;
+}
+
+/* Limita a largura do conteúdo (visual de celular), mas as faixas de cor ocupam a tela toda */
+.conteudo {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Topo ---------- */
+.topo {
+  background-color: #2d2a8f;
+  padding: 20px 0 16px;
+}
+
+.item-topo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.item-topo i {
+  font-size: 2.8rem;
+  line-height: 1;
+  color: #fa8548;
+}
+
+.caixa-foto-perfil {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 3px solid #f4a6c8;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+/* Imagens dentro das caixas: preenchem tudo, sem deformar */
+.caixa-foto-perfil img,
+.caixa-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- Busca e filtro ---------- */
+.busca {
+  position: relative;
+  flex-grow: 1;
+}
+
+.busca input {
+  height: 44px;
+  background-color: #fff;
+  border: none;
+  padding: 0 45px 0 18px;
+  font-weight: 700;
+  color: #333;
+}
+
+.busca input::placeholder {
+  color: #333;
+}
+
+.busca > i {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #111;
+  pointer-events: none;
+}
+
+.btn-filtro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+
+.btn-filtro i {
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #111;
+}
+
+/* ---------- Seções ---------- */
+.titulo-secao {
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.nome-neto {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 14px 0;
+}
+
+.caixa-foto {
+  width: 100px;
+  height: 110px;
+  background-color: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.servicos p {
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 0.6rem;
+}
+
+/* Últimos netos: fundo azul, texto branco */
+.secao-ultimos {
+  color: #fff;
+  padding: 24px 0 70px;
+}
+
+/* Sugestões: fundo cinza com o topo arredondado (lembra as nuvens do design) */
+.secao-sugestoes {
+  background-color: #d9d9e1;
+  border-radius: 80px 80px 0 0;
+  margin-top: -40px;
+  padding: 40px 0;
+  color: #111;
 }
