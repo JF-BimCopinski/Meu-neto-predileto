@@ -13,61 +13,21 @@
 
 <body class="d-flex flex-column min-vh-100">
 
-    <!-- ================= TOPO ================= -->
-    <header class="topo">
-        <div class="conteudo">
-
-            <!-- Menu, perfil e configuração -->
-            <nav class="d-flex justify-content-between align-items-end">
-                <a href="#" class="item-topo">
-                    <i class="bi bi-house-door-fill"></i>
-                    <span>MENU</span>
-                </a>
-
-                <a href="#" class="item-topo">
-                    <!-- FOTO DE PERFIL: coloque o caminho da imagem no src (ex.: img/perfil.jpg) -->
-                    <div class="caixa-foto-perfil">
-                        <img src="img/velha.jpg" alt="foto do usuário">
-                    </div>
-                    <span>PERFIL</span>
-                </a>
-
-                <a href="#" class="item-topo">
-                    <i class="bi bi-gear-fill"></i>
-                    <span>CONFIGURAÇÃO</span>
-                </a>
-            </nav>
-
-            <!-- Busca e filtro -->
-            <form class="d-flex align-items-center gap-3 mt-3" action="home.php" method="GET">
-                <div class="busca">
-                    <input type="text" class="form-control rounded-pill" name="busca"
-                        placeholder="O que você está procurando?">
-                    <i class="bi bi-search"></i>
-                </div>
-
-                <button type="button" class="btn-filtro">
-                    <i class="bi bi-funnel-fill"></i>
-                    <span>FILTRO</span>
-                </button>
-            </form>
-        </div>
-    </header>
+<?php include 'inc/header.inc.php'; ?>
 
     <!-- ================= CONTEÚDO ================= -->
     <main class="flex-grow-1 d-flex flex-column">
 
         <!-- Últimos netos de aluguel -->
         <section class="secao-ultimos">
-            <div class="conteudo text-center">
+            <a href="perfilNeto.php?id=maria" class="conteudo text-center d-block text-decoration-none">
                 <h2 class="titulo-secao">ÚLTIMOS NETOS DE ALUGUEL</h2>
                 <h3 class="nome-neto">Maria Luiza, 25 anos</h3>
 
                 <div class="d-flex align-items-start gap-3 text-start">
                     <div>
-                        <!-- FOTO DA MARIA LUIZA: coloque o caminho da imagem no src -->
                         <div class="caixa-foto">
-                            <img src="img/neto1.jpg" alt="imagem do neto de aluguel 1">
+                            <img src="img/neto1.jpg" alt="imagem da Maria Luiza">
                         </div>
                         <div class="text-warning mt-2">
                             <i class="bi bi-star-fill"></i>
@@ -83,20 +43,21 @@
                         <p>Acompanhamento em academia</p>
                     </div>
                 </div>
-            </div>
+
+                <p class="ver-perfil mt-3 mb-0">VER PERFIL <i class="bi bi-chevron-right"></i></p>
+            </a>
         </section>
 
         <!-- Sugestões de netos -->
         <section class="secao-sugestoes flex-grow-1">
-            <div class="conteudo text-center">
+            <a href="perfilNeto.php?id=miguel" class="conteudo text-center d-block text-decoration-none">
                 <h2 class="titulo-secao">SUGESTÕES DE NETOS</h2>
                 <h3 class="nome-neto">Miguel, 30 anos</h3>
 
                 <div class="d-flex align-items-start gap-3 text-start">
                     <div>
-                        <!-- FOTO DO MIGUEL: coloque o caminho da imagem no src -->
                         <div class="caixa-foto">
-                            <img src="img/neto2.jpg" alt="imagem do neto de aluguel 2">
+                            <img src="img/neto2.jpg" alt="Imagem do Miguel">
                         </div>
                         <div class="text-warning mt-2">
                             <i class="bi bi-star-fill"></i>
@@ -112,7 +73,9 @@
                         <p>Letramento digital para idosos</p>
                     </div>
                 </div>
-            </div>
+
+                <p class="ver-perfil mt-3 mb-0">VER PERFIL <i class="bi bi-chevron-right"></i></p>
+            </a>
         </section>
     </main>
 </body>
