@@ -154,7 +154,7 @@ body {
 }
 
 /* =====================================================
-   HOME (home.php) - também usado no perfil (perfil-neto.php)
+   HOME (home.php) - também usado no perfil (perfilNeto.php)
    ===================================================== */
 
 /* Limita a largura do conteúdo, mas as faixas de cor ocupam a tela toda */
@@ -164,7 +164,7 @@ body {
   padding: 0 1.25rem;
 }
 
-/* ---------- Topo ---------- */
+/* ---------- Cabeçalho ---------- */
 .topo {
   background-color: #2d2a8f;
   padding: 1.25rem 0 1rem;
@@ -314,18 +314,8 @@ body {
 }
 
 /* =====================================================
-   PERFIL DO NETO (perfil-neto.php)
+   PERFIL DO NETO (perfilNeto.php)
    ===================================================== */
-
-/* ---------- Topo ---------- */
-.marca-topo {
-  margin: 0;
-  color: #fff;
-  font-weight: 800;
-  font-size: 1.1rem;
-  line-height: 1.1;
-  text-align: right;
-}
 
 /* ---------- Cartões ---------- */
 .cartao-perfil {
@@ -479,4 +469,264 @@ body {
   font-size: 2.2rem;
   line-height: 1;
   color: #c9d1ff;
+}
+
+/* =====================================================
+   PAINEL DO NETO (painelNeto.php)
+   ===================================================== */
+
+/* Retângulo de solicitações (laranja, texto escuro para dar contraste) */
+.btn-solicitacoes {
+  position: relative; /* para a notificação ficar presa no canto */
+  background-color: #fa8548;
+  border: none;
+  border-radius: 1.25rem;
+  color: #111;
+  font-weight: 800;
+  padding: 1.125rem 1.25rem;
+}
+.btn-solicitacoes:hover {
+  background-color: #e8733a;
+  color: #111;
+}
+.btn-solicitacoes i {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+/* Bolinha de notificação no canto do retângulo */
+.notificacao {
+  position: absolute;
+  top: -0.75rem;
+  right: -0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.9rem;
+  height: 1.9rem;
+  padding: 0 0.4rem;
+  background-color: #e63946;
+  border: 0.1875rem solid #1c2160;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* Pop up (modal do Bootstrap) com o visual dos cartões */
+.modal {
+  --bs-modal-width: 28rem;
+}
+.cartao-modal {
+  background-color: #1c2160;
+  border: 0.125rem solid rgba(255, 255, 255, 0.25);
+  border-radius: 1.5rem;
+  color: #fff;
+}
+.cartao-modal .modal-header {
+  border-bottom: 0.125rem solid rgba(255, 255, 255, 0.15);
+  padding: 1.25rem;
+}
+.cartao-modal .modal-body {
+  padding: 1.25rem;
+}
+
+/* =====================================================
+   PAGAMENTO (pagamento.php)
+   ===================================================== */
+.resumo-neto {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.resumo-neto .caixa-foto-perfil {
+  flex-shrink: 0;
+}
+
+.nome-resumo {
+  font-size: 1.3rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.valor-total {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+/* QR Code sempre sobre fundo branco (necessário para a câmera ler) */
+.caixa-qr {
+  width: 15rem;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 1rem;
+}
+.caixa-qr img {
+  width: 100%;
+  display: block;
+}
+
+/* Status do pagamento: laranja = aguardando, verde = pago, lilás = expirado */
+.status-pagamento {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: #fa8548;
+  color: #111;
+  font-size: 1.1rem;
+  font-weight: 800;
+  border-radius: 2rem;
+  padding: 0.6rem 1.25rem;
+}
+.status-pagamento i {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+.status-pago {
+  background-color: #3ddc84;
+}
+.status-expirado {
+  background-color: #c9d1ff;
+}
+
+.tempo-qr {
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.codigo-pix {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  word-break: break-all; /* quebra o código comprido em várias linhas */
+}
+
+/* =====================================================
+   CHAT (chat.php)
+   ===================================================== */
+.cabecalho-chat {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 0.125rem solid rgba(255, 255, 255, 0.15);
+}
+.cabecalho-chat .caixa-foto-perfil {
+  width: 3.5rem;
+  height: 3.5rem;
+  flex-shrink: 0;
+}
+
+.voltar-chat {
+  color: #fa8548;
+  font-size: 1.8rem;
+  line-height: 1;
+  text-decoration: none;
+}
+.voltar-chat:hover {
+  color: #ffd994;
+}
+
+.nome-chat {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.status-online {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #3ddc84;
+}
+.status-online i {
+  font-size: 0.55rem;
+}
+
+/* Espaço da conversa (sem balões: só nome, hora e texto) */
+.area-chat {
+  height: 22rem;
+  overflow-y: auto;
+  padding: 1.25rem;
+}
+
+.mensagem {
+  margin-bottom: 1.1rem;
+}
+.mensagem-autor {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #ffd994;
+}
+.mensagem-voce .mensagem-autor {
+  color: #fa8548;
+}
+.mensagem-hora {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+}
+.mensagem-texto {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.digitando {
+  margin: 0;
+  padding: 0 1.25rem 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.barra-chat {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-top: 0.125rem solid rgba(255, 255, 255, 0.15);
+}
+
+.campo-chat {
+  flex-grow: 1;
+}
+.campo-chat input.form-control {
+  height: 3.25rem;
+  background-color: #d9d9d9;
+  border: none;
+  padding: 0 1.25rem;
+  font-weight: 700;
+  color: #333;
+}
+.campo-chat input.form-control::placeholder {
+  color: #555;
+}
+.campo-chat input.form-control:focus {
+  background-color: #e6e6e6;
+  box-shadow: 0 0 0 0.25rem rgba(250, 133, 72, 0.5);
+}
+
+.btn-enviar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 3.25rem;
+  height: 3.25rem;
+  background-color: #fa8548;
+  border: none;
+  border-radius: 50%;
+  color: #111;
+  font-size: 1.3rem;
+}
+.btn-enviar:hover {
+  background-color: #e8733a;
 }

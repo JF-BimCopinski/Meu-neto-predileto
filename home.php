@@ -27,7 +27,7 @@
                 <div class="d-flex align-items-start gap-3 text-start">
                     <div>
                         <div class="caixa-foto">
-                            <img src="img/neto1.jpg" alt="imagem da Maria Luiza">
+                            <img src="img/maria.jpg" alt="Foto da Maria Luiza">
                         </div>
                         <div class="text-warning mt-2">
                             <i class="bi bi-star-fill"></i>
@@ -57,7 +57,7 @@
                 <div class="d-flex align-items-start gap-3 text-start">
                     <div>
                         <div class="caixa-foto">
-                            <img src="img/neto2.jpg" alt="Imagem do Miguel">
+                            <img src="img/miguel.jpg" alt="Foto do Miguel">
                         </div>
                         <div class="text-warning mt-2">
                             <i class="bi bi-star-fill"></i>

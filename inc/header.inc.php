@@ -1,4 +1,4 @@
-<!-- ================= TOPO (usado em todas as telas do idoso) ================= -->
+<!-- ================= CABEÇALHO (usado em todas as telas do idoso) ================= -->
 <header class="topo">
     <div class="conteudo">
 
@@ -10,9 +10,9 @@
             </a>
 
             <a href="#" class="item-topo">
-                <!-- FOTO DE PERFIL: coloque o caminho da imagem no src (ex.: img/perfil.jpg) -->
+                <!-- FOTO DE PERFIL DO IDOSO -->
                 <div class="caixa-foto-perfil">
-                    <img src="img/velha.jpg" alt="imagem de uma velha">
+                    <img src="img/idosa.jpg" alt="Foto de perfil da idosa">
                 </div>
                 <span>PERFIL</span>
             </a>

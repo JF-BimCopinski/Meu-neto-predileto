@@ -10,28 +10,26 @@ $telefone = $_POST['telefone'];
 $senha = $_POST['senha'];
 $tipo = $_POST['tipo']; // "neto" ou "idoso" (depende do botão clicado)
 
-// Tira a máscara do telefone: "(41) 99999-9999" vira "41999999999"
+// Tira a máscara do telefone: "(42) 99999-9999" vira "42999999999"
 $telefone = str_replace(['(', ')', ' ', '-'], '', $telefone);
 
-// Usuário de teste (depois isso vai virar uma consulta no banco de dados)
-$telefoneCerto = "42999999999";
-$senhaCerta = "1234";
+// Usuários de teste (depois isso vai virar uma consulta no banco de dados)
+$telefoneIdoso = "42999999999";
+$senhaIdoso = "1234";
 
-if ($telefone == $telefoneCerto && $senha == $senhaCerta) {
+$telefoneNeto = "42988888888";
+$senhaNeto = "1234";
 
-    if ($tipo == "idoso") {
-        // Idoso e responsável vão para a tela de contato com os netos
-        header("Location: home.php");
-        exit;
-    } else {
-        // Neto de aluguel: ainda não existe tela para ele
-        echo "<h1>Login feito com sucesso!</h1>";
-        echo "<p>A tela do neto de aluguel ainda está em construção.</p>";
-    }
-
+if ($tipo == "idoso" && $telefone == $telefoneIdoso && $senha == $senhaIdoso) {
+    // Idoso e responsável vão para a tela de contato com os netos
+    header("Location: home.php");
+    exit;
+} elseif ($tipo == "neto" && $telefone == $telefoneNeto && $senha == $senhaNeto) {
+    // Neto de aluguel vai para o painel dele (perfil + solicitações)
+    header("Location: painelNeto.php");
+    exit;
 } else {
     // Volta pro login avisando que deu erro
     header("Location: index.php?erro=1");
     exit;
 }
-?>
